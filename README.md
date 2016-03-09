@@ -1,2 +1,2 @@
 # ngisims
-workshop about Angular 101 : just the basics
+workshop about Angular 101 : just the basics with static data.
