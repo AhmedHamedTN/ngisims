@@ -1,0 +1,51 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">ng-isims</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#/Otherpeople">Other People</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="col-sm-12"  ng-controller="OtherStudentsController as OSC">
+    <!--search input-->
+    <input class="form-control" type="text"
+           placeholder="search for Other people"
+           ng-model="search">
+    <br>
+    <br>
+    <div class="panel panel-default" ng-repeat="s in OSC.OtherStudents | filter : search | orderBy:'name'">
+        <person-directive></person-directive>
+    </div>
+
+    <!--normal code before the directive-->
+    <!-- <div class="panel panel-default" ng-repeat="s in OSC.OtherStudents | filter : search">
+         <div class="panel-body">
+             <strong>{{s.name}}</strong> is <strong>{{s.age}}</strong> years old !, he/she Likes <strong>{{s.hobby}}</strong>
+         </div>
+     </div>-->
+
+    <!--<ul ng-repeat="s in OSC.OtherStudents | filter : search">
+        <li><strong>{{s.name}}</strong> is <strong>{{s.age}}</strong> years old !, he/she Likes <strong>{{s.hobby}}</strong></li>
+    </ul>-->
+
+<!--    &lt;!&ndash;JS array  &ndash;&gt;
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Hobby</th>
+        </tr>
+        </thead>
+        <tbody>
+        &lt;!&ndash; Loop our JS array &ndash;&gt;
+        <tr ng-repeat="s in OSC.OtherStudents | filter : search">
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>{{s.hobby}}</td>
+        </tr>
+        </tbody>
+    </table>-->
+</div>

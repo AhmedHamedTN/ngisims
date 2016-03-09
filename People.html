@@ -1,0 +1,42 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">ng-isims</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#/Otherpeople">Other People</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="col-sm-12"  ng-controller="StudentController as StCtrl">
+
+    <!--data binding -->
+    <input class="form-control" type="text"
+           placeholder="your name here"
+           ng-model="helloText">
+    <h1>Hello {{helloText}} !! </h1>
+
+    <!--search input-->
+    <input class="form-control" type="text"
+           placeholder="search for geeks"
+           ng-model="search">
+
+    <!--JS array  -->
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Hobby</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Loop our JS array -->
+        <tr ng-repeat="s in StCtrl.Students | filter : search">
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>{{s.hobby}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
